@@ -1,0 +1,10 @@
+-create generatePasword() function
+
+-prompt for password length (8-128)
+
+-prompt for uppercase, lowercase, numbers, special characters
+    -must select at least one character type
+    -give yes or no answer for each
+    -log those answers and if true, use those characters (arrays) 
+
+-once generated the password displays in the text box (should already be written to do this)
