@@ -1,10 +1,25 @@
 -create generatePasword() function
 
 -prompt for password length (8-128)
+    -only accept numbers between 8-128
+    -if not between then reset 
+
 
 -prompt for uppercase, lowercase, numbers, special characters
     -must select at least one character type
     -give yes or no answer for each
     -log those answers and if true, use those characters (arrays) 
 
+-store values in and object as key pairs
+    -access key pairs info and add 'true' arrays to a password array
+    -generate a random number based on the length of the array and add the character indexed at that number and add that to a generated password array. 
+
 -once generated the password displays in the text box (should already be written to do this)
+
+-parseInt for number of characters wanted in ?
+
+-create empty array to add to
+
+-for loop to generate random number and call that number from password array and add to password string 
+
+-add 'prevent event default'?

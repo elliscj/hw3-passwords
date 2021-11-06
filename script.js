@@ -1,138 +1,117 @@
 // Assignment Code
+
+//stored reference to the button id in html
 var generateBtn = document.querySelector("#generate");
 
-var specialCharacters = [
-  "!",
-  "#",
-  "$",
-  "%",
-  "&",
-  "(",
-  ")",
-  "*",
-  "+",
-  ",",
-  "-",
-  ".",
-  "/",
-  ":",
-  ";",
-  "<",
-  "=",
-  ">",
-  "?",
-  "@",
-  "[",
-];
+var specChar = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+var specialCharacters = specChar.split("");
 
-var upperCase = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
+var upCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var upperCase = upCase.split("");
 
-var lowerCase = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
+var lowCase = "abcdefghijklmnopqrstuvwxyz";
+var lowerCase = lowCase.split("");
 
-var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var num = "0123456789";
+var numbers = num.split("");
 
-var randomChar = Math.floor(Math.random() * specialCharacters.length);
-console.log(randomChar);
+var passArray;
 
-var randomUpper = Math.floor(Math.random() * upperCase.length);
-console.log(randomUpper);
+var password = "";
 
-var randomLower = Math.floor(Math.random() * lowerCase.length);
-console.log(randomLower);
+var passwordVariable;
 
-var randomNumber = Math.floor(Math.random() * numbers.length);
-console.log(randomNumber);
+console.log(passArray);
 
-var passwordChars;
-
-var passwordLength = prompt("how long would youlike your password");
-
-if (7 < passwordLength && passwordLength < 129) {
-  alert("your password is " + passwordLength + " characters long.");
-} else {
-  passwordLength = prompt("please enter a number between 8 and 128");
-}
-
-// while (true) {
-//   if (7 < passwordLength && passwordLength < 129) {
-//     alert("Good!");
-//     break; // This ends the loop
-//   } else if (passwordLength > 128) {
-//     prompt("Too Big");
-//   } else if (passwordLength < 8) {
-//     prompt("Too Small");
-//   }
-// }
-
-console.log(passwordLength);
-
-// if {
-//   passwordLength = (7< passwordLength < 128)
-//   alert
-// }
+// var randomChar = Math.floor(Math.random() * passArray.length);
 
 // console.log(randomChar);
 
-// var randomUpper =
+//
+// Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
 
-// var randomLower =
+generateBtn.addEventListener("click", function () {
+  //main function
 
-// var randomLower =
+  do {
+    passwordVariable = {
+      passwordLength: parseInt(
+        prompt("how long would you like your password to be?")
+      ),
+    };
+    if (
+      7 < passwordVariable.passwordLength &&
+      passwordVariable.passwordLength < 129
+    ) {
+      alert(
+        "Your password will be " +
+          passwordVariable.passwordLength +
+          " characters long."
+      );
+      break; // This ends the loop
+    } else if (passwordVariable.passwordLength > 128) {
+      alert("Too big, please choose a number between 8 and 128.");
+    } else if (passwordVariable.passwordLength < 8) {
+      alert("Too small, please choose a number between 8 and 128.");
+    }
+  } while (passwordVariable.passwordLength < 8 || passwordVariable.passwordLength > 128);
 
+  do {
+    alert("please choose at least one character type");
+
+    (passwordVariable.upperCaseChar = confirm(
+      "would you like to include upper case letters in your password?"
+    )),
+      (passwordVariable.lowerCaseChar = confirm(
+        "would you like to include lower case letters in your password?"
+      )),
+      (passwordVariable.specialCharactersChar = confirm(
+        "would you like to include special characters in your password?"
+      )),
+      (passwordVariable.numbersChar = confirm(
+        "would you like to include numbers in your password?"
+      ));
+  } while (passwordVariable.upperCaseChar === false && passwordVariable.lowerCaseChar === false && passwordVariable.specialCharactersChar === false && passwordVariable.numbersChar === false);
+
+  // if (passwordVariable.upperCaseChar === true) {
+  //   passArray.concat(upperCase);
+  // }
+  // if (passwordVariable.lowerCaseChar === true) {
+  //   passArray.concat(lowerCase);
+  // }
+  // if (passwordVariable.specialCharactersChar === true) {
+  //   passArray.concat(specialCharacters);
+  // }
+  // if (passwordVariable.numbersChar === true) {
+  //   passArray.concat(numbers);
+  // }
+  console.log(passwordVariable);
+  console.log(passwordVariable.passwordLength);
+});
+
+//do with a loop, loop as many times as password length for each loop grab a random indexed item from the concat array
+
+// console.log(passwordLength);
+
+//parseInt?
+
+// for (i = 0, i < passArray.length, i++ ) {
+
+// }
+
+// //just reprompt and give alert
+
+// if (passwordLength = (7 > passwordLength || passwordLength > 128)) {
+//   alert ("you must choose a length between 8 and 128")
+// } else {(confirm confirm confirm confirm);
+// }
+
+// if (passwordVariable.upperCaseChar === false && passwordVariable.lowerCaseChar === false && passwordVariable.numbersChar === false && passwordVariable.specialCharactersChar === false) {
+//   alert ("you must choose at least one character type")
+// }
+
+// }
 // // Write password to the #password input
 // function writePassword() {
 
@@ -141,16 +120,10 @@ console.log(passwordLength);
 
 //   passwordText.value = password;
 
-//   function generatePassword() {
-//     alert("How long would you like your password to be?");
+function generatePassword() {}
 
-//   }
-// }
-
-// Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-console.log(specialCharacters);
-console.log(upperCase);
-console.log(lowerCase);
-console.log(numbers);
+// console.log(specialCharacters);
+// console.log(upperCase);
+// console.log(lowerCase);
+// console.log(numbers);
+//
