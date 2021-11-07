@@ -10,9 +10,11 @@ You will be prompted with questions regarding the contents of the password that 
 
 ### Link to deployed website:
 
+https://elliscj.github.io/hw3-passwords/
+
 ### Screenshot
 
-![Web Application Screen Shot](Screen Shot 2021-11-06 at 8.17.14 PM.png)
+![Web Application Screen Shot](password_generator_screenshot.png)
 
 ## License
 
