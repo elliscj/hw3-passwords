@@ -1,5 +1,3 @@
-// Assignment Code
-
 //stored reference to the button id in html
 var generateBtn = document.querySelector("#generate");
 
@@ -20,12 +18,6 @@ var passArray = [];
 var password = "";
 
 var passwordVariable;
-
-//
-// Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-function generatePassword() {}
 
 function writePassword() {
   //main function
@@ -97,7 +89,7 @@ function writePassword() {
 
   randomChars = [];
   //randomChars = [5,9,6,3]
-  //passArray = [A,B,d,h,l,6,8,2]
+  //passArray = [A,B...,a,b,c...,1,2,3...]
   for (i = 0; i < passwordVariable.passwordLength; i++) {
     var randomChar = Math.floor(Math.random() * passArray.length);
     randomChars = randomChars.concat(randomChar);
@@ -111,37 +103,3 @@ function writePassword() {
   passwordText.value = password;
 }
 generateBtn.addEventListener("click", writePassword);
-
-//do with a loop, loop as many times as password length for each loop grab a random indexed item from the concat array
-
-// console.log(passwordLength);
-
-//parseInt?
-
-// //just reprompt and give alert
-
-// if (passwordLength = (7 > passwordLength || passwordLength > 128)) {
-//   alert ("you must choose a length between 8 and 128")
-// } else {(confirm confirm confirm confirm);
-// }
-
-// if (passwordVariable.upperCaseChar === false && passwordVariable.lowerCaseChar === false && passwordVariable.numbersChar === false && passwordVariable.specialCharactersChar === false) {
-//   alert ("you must choose at least one character type")
-// }
-
-// }
-// // Write password to the #password input
-// function writePassword() {
-
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-function generatePassword() {}
-
-// console.log(specialCharacters);
-// console.log(upperCase);
-// console.log(lowerCase);
-// console.log(numbers);
-//
