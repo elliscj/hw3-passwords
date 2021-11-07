@@ -25,7 +25,9 @@ var passwordVariable;
 // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
 
-generateBtn.addEventListener("click", function () {
+function generatePassword() {}
+
+function writePassword() {
   //main function
 
   do {
@@ -49,7 +51,10 @@ generateBtn.addEventListener("click", function () {
     } else if (passwordVariable.passwordLength < 8) {
       alert("Too small, please choose a number between 8 and 128.");
     }
-  } while (passwordVariable.passwordLength < 8 || passwordVariable.passwordLength > 128);
+  } while (
+    passwordVariable.passwordLength < 8 ||
+    passwordVariable.passwordLength > 128
+  );
 
   do {
     alert("please choose at least one character type");
@@ -66,7 +71,12 @@ generateBtn.addEventListener("click", function () {
       (passwordVariable.numbersChar = confirm(
         "would you like to include numbers in your password?"
       ));
-  } while (passwordVariable.upperCaseChar === false && passwordVariable.lowerCaseChar === false && passwordVariable.specialCharactersChar === false && passwordVariable.numbersChar === false);
+  } while (
+    passwordVariable.upperCaseChar === false &&
+    passwordVariable.lowerCaseChar === false &&
+    passwordVariable.specialCharactersChar === false &&
+    passwordVariable.numbersChar === false
+  );
 
   if (passwordVariable.upperCaseChar === true) {
     passArray = passArray.concat(upperCase);
@@ -98,12 +108,6 @@ generateBtn.addEventListener("click", function () {
     password = password.concat(passArray[randomChar]);
   }
   var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-});
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 generateBtn.addEventListener("click", writePassword);
